@@ -24,6 +24,7 @@ class _TodoListState extends State<TodoList> {
       item.datetime = DateTime.now();
       item.title = "Title";
       item.memo = "Memo";
+      item.isDone = false;
 
       items.add(item);
     });
@@ -35,9 +36,18 @@ class _TodoListState extends State<TodoList> {
       itemCount: items.length,
       itemBuilder: (context, index) {
         var item = items[index];
+        var textStyle = item.isDone
+            ? TextStyle(decoration: TextDecoration.lineThrough)
+            : null;
+
         return ListTile(
-          title: Text('$index : ${item.title}'),
-          subtitle: Text('${item.memo}'),
+          title: Text('$index : ${item.title}', style: textStyle),
+          subtitle: Text('${item.memo}', style: textStyle),
+          onTap: () {
+            setState(() {
+              item.isDone = !item.isDone;
+            });
+          },
         );
       },
     );
