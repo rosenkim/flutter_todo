@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(TodoController());
 
-    return GetMaterialApp(
+    return MaterialApp(
       title: 'Flutter Todo App',
       theme: ThemeData(
         primarySwatch: Colors.blue,

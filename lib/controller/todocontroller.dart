@@ -4,11 +4,10 @@ import 'package:flutter_todo/model/todoitem.dart';
 class TodoController extends GetxController {
   var todoItems = [];
 
-  TodoItem appendItem() {
+  TodoItem appendItem(String memo, DateTime datetime) {
     var item = TodoItem();
-    item.datetime = DateTime.now();
-    item.title = "Title";
-    item.memo = "Memo";
+    item.datetime = datetime;
+    item.memo = memo;
     item.isDone = false;
 
     todoItems.add(item);

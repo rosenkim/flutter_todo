@@ -81,8 +81,8 @@ class TodoList extends StatelessWidget {
                     }
                   },
                   child: ListTile(
-                      title: Text('$index : ${item.title}', style: textStyle),
-                      subtitle: Text('${item.memo}', style: textStyle),
+                      title: Text('$index : ${item.memo}', style: textStyle),
+                      subtitle: Text('${item.datetime}', style: textStyle),
                       onTap: () {
                         item.isDone = !item.isDone;
                         c.update();
